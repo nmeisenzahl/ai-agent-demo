@@ -1,0 +1,19 @@
+{
+  "mcpServers": {
+    "playwright": {
+      "command": "npx",
+      "args": ["-y", "@executeautomation/playwright-mcp-server"],
+      "description": "Playwright browser automation and HTML validation server",
+      "tools": [
+        "playwright_navigate",
+        "playwright_screenshot", 
+        "playwright_extract_text",
+        "playwright_extract_html",
+        "playwright_console_logs",
+        "playwright_click",
+        "playwright_mobile_emulation",
+        "playwright_pdf"
+      ]
+    }
+  }
+}

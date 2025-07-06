@@ -28,9 +28,9 @@ research_agent = FlockFactory.create_default_agent(
     include_thought_process=True,
     stream=True,
     enable_rich_tables=True,
-    model=APP_SETTINGS.research_model,  # Use string model name
-    max_tokens=APP_SETTINGS.max_tokens,
-    temperature=APP_SETTINGS.default_temperature,
+    model=APP_SETTINGS.research_model,  # Use model from environment configuration
+    max_tokens=APP_SETTINGS.max_tokens,  # Use max_tokens from environment configuration
+    temperature=APP_SETTINGS.research_temperature,  # Use research-specific temperature for creativity
     print_context=True,
     tools=[],  # No tools needed for basic research
 )

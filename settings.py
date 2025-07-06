@@ -35,15 +35,39 @@ class AppSettings(BaseSettings):
     )
     
     summary_model: str = Field(
-        default="azure/gpt-4.1-mini",
+        default="azure/gpt-4o-mini",
         validation_alias="SUMMARY_MODEL", 
         description="Model for summary agent."
+    )
+    
+    html_model: str = Field(
+        default="azure/gpt-4o-mini",
+        validation_alias="HTML_MODEL",
+        description="Model for HTML generation agent."
     )
     
     default_temperature: float = Field(
         default=0.7,
         validation_alias="DEFAULT_TEMPERATURE",
         description="Temperature setting for models."
+    )
+    
+    research_temperature: float = Field(
+        default=0.7,
+        validation_alias="RESEARCH_TEMPERATURE",
+        description="Temperature setting for research agent (higher for creativity)."
+    )
+    
+    summary_temperature: float = Field(
+        default=0.5,
+        validation_alias="SUMMARY_TEMPERATURE",
+        description="Temperature setting for summary agent (medium for balanced creativity)."
+    )
+    
+    html_temperature: float = Field(
+        default=0.3,
+        validation_alias="HTML_TEMPERATURE",
+        description="Temperature setting for HTML generation (lower for consistency)."
     )
     
     max_tokens: int = Field(
@@ -56,6 +80,12 @@ class AppSettings(BaseSettings):
         default=10,
         validation_alias="MAX_ITERATIONS",
         description="Max iterations for LimitRouter"
+    )
+    
+    output_dir: str = Field(
+        default="output",
+        validation_alias="OUTPUT_DIR",
+        description="Directory for saving generated files (HTML, reports)"
     )
     
     model_config: SettingsConfigDict = SettingsConfigDict(

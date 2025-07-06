@@ -168,6 +168,12 @@ cython_debug/
 # uv
 uv.lock
 
+# Flock framework
+.flock/
+
+# Output directory
+output/
+
 # OS generated files
 .DS_Store
 .DS_Store?
