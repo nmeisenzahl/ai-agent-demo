@@ -8,6 +8,7 @@ dependencies = [
     "flock-core>=0.4.524",
     "pydantic",
     "pydantic-settings",
+    "python-dotenv",
 ]
 
 [build-system]

@@ -7,4 +7,4 @@ Key Resources
 - [Flock Documentation](https://whiteducksoftware.github.io/flock/)
 - [Flock Sample Code](https://github.com/whiteducksoftware/flock-showcase)
 
-Always use `uv`.
+Always use `uv` form any `python` command to ensure the correct environment.

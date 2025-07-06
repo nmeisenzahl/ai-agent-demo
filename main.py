@@ -105,7 +105,7 @@ async def run_full_workflow(topic: str) -> dict:
                 result['saved_html_path'] = saved_path
                 
                 print(f"\n📄 HTML article saved to: {saved_path}")
-                print(f"🔍 Playwright validation: {'✅ Enabled' if True else '❌ Disabled'}")
+                print(f"🔍 Playwright validation: ✅ Enabled")
                 
             except Exception as e:
                 print(f"⚠️  Warning: Could not save HTML file: {e}")

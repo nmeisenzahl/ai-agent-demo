@@ -144,3 +144,17 @@
 {"timestamp": "2025-07-06T14:58:25.830415", "value": 0.0009584, "tags": {"agent": "summary_agent", "type": "output"}}
 {"timestamp": "2025-07-06T14:58:26.759651", "value": 0.0, "tags": {"agent": "html_agent", "type": "input"}}
 {"timestamp": "2025-07-06T14:58:36.080610", "value": 0.0027359999999999997, "tags": {"agent": "html_agent", "type": "output"}}
+{"timestamp": "2025-07-06T15:17:10.804434", "value": 0.0, "tags": {"agent": "research_agent", "type": "input"}}
+{"timestamp": "2025-07-06T15:17:10.892820", "value": 0.00035046000000000003, "tags": {"agent": "research_agent", "type": "output"}}
+{"timestamp": "2025-07-06T15:17:12.453856", "value": 0.0, "tags": {"agent": "summary_agent", "type": "input"}}
+{"timestamp": "2025-07-06T15:17:13.195352", "value": 0.0009776, "tags": {"agent": "summary_agent", "type": "output"}}
+{"timestamp": "2025-07-06T15:17:14.172056", "value": 0.0, "tags": {"agent": "html_agent", "type": "input"}}
+{"timestamp": "2025-07-06T15:17:24.846451", "value": 0.0032976, "tags": {"agent": "html_agent", "type": "output"}}
+{"timestamp": "2025-07-06T15:19:26.829201", "value": 0.0, "tags": {"agent": "research_agent", "type": "input"}}
+{"timestamp": "2025-07-06T15:19:31.053527", "value": 0.00030624000000000005, "tags": {"agent": "research_agent", "type": "output"}}
+{"timestamp": "2025-07-06T15:19:32.029008", "value": 0.0, "tags": {"agent": "summary_agent", "type": "input"}}
+{"timestamp": "2025-07-06T15:19:32.829350", "value": 0.0009008, "tags": {"agent": "summary_agent", "type": "output"}}
+{"timestamp": "2025-07-06T15:19:33.730689", "value": 0.0, "tags": {"agent": "html_agent", "type": "input"}}
+{"timestamp": "2025-07-06T15:19:43.695058", "value": 0.0031696, "tags": {"agent": "html_agent", "type": "output"}}
+{"timestamp": "2025-07-06T15:19:44.802887", "value": 0.0, "tags": {"agent": "html_agent", "type": "input"}}
+{"timestamp": "2025-07-06T15:19:44.822541", "value": 0.0031696, "tags": {"agent": "html_agent", "type": "output"}}

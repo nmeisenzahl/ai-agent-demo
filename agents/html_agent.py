@@ -1,6 +1,6 @@
 """HTML Generation Agent for creating newspaper-style articles."""
 
-import azure_config  # Configure DSPy for Azure OpenAI
+import os
 from flock.core import FlockFactory
 from settings import APP_SETTINGS
 
@@ -461,9 +461,6 @@ key_points: list[str] | List of key points to highlight""",
 # Additional utility function for saving HTML files
 def save_html_article(html_content: str, filename: str, output_dir: str = None, validate: bool = False) -> str:
     """Save HTML content to a file and optionally validate it."""
-    import os
-    from settings import APP_SETTINGS
-    
     # Use configured output directory if not specified
     if output_dir is None:
         output_dir = APP_SETTINGS.output_dir

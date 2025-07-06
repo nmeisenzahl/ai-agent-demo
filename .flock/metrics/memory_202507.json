@@ -144,3 +144,17 @@
 {"timestamp": "2025-07-06T14:58:25.830745", "value": 425984, "tags": {"agent": "summary_agent", "phase": "end"}}
 {"timestamp": "2025-07-06T14:58:26.758893", "value": 485425152, "tags": {"agent": "html_agent", "phase": "start"}}
 {"timestamp": "2025-07-06T14:58:36.080844", "value": 8142848, "tags": {"agent": "html_agent", "phase": "end"}}
+{"timestamp": "2025-07-06T15:17:10.801750", "value": 387710976, "tags": {"agent": "research_agent", "phase": "start"}}
+{"timestamp": "2025-07-06T15:17:10.893213", "value": 12877824, "tags": {"agent": "research_agent", "phase": "end"}}
+{"timestamp": "2025-07-06T15:17:12.452966", "value": 405471232, "tags": {"agent": "summary_agent", "phase": "start"}}
+{"timestamp": "2025-07-06T15:17:13.195600", "value": 540672, "tags": {"agent": "summary_agent", "phase": "end"}}
+{"timestamp": "2025-07-06T15:17:14.171484", "value": 407060480, "tags": {"agent": "html_agent", "phase": "start"}}
+{"timestamp": "2025-07-06T15:17:24.846690", "value": 9977856, "tags": {"agent": "html_agent", "phase": "end"}}
+{"timestamp": "2025-07-06T15:19:26.826575", "value": 436158464, "tags": {"agent": "research_agent", "phase": "start"}}
+{"timestamp": "2025-07-06T15:19:31.053864", "value": 95961088, "tags": {"agent": "research_agent", "phase": "end"}}
+{"timestamp": "2025-07-06T15:19:32.028192", "value": 533676032, "tags": {"agent": "summary_agent", "phase": "start"}}
+{"timestamp": "2025-07-06T15:19:32.829727", "value": 425984, "tags": {"agent": "summary_agent", "phase": "end"}}
+{"timestamp": "2025-07-06T15:19:33.730065", "value": 531628032, "tags": {"agent": "html_agent", "phase": "start"}}
+{"timestamp": "2025-07-06T15:19:43.695277", "value": -63471616, "tags": {"agent": "html_agent", "phase": "end"}}
+{"timestamp": "2025-07-06T15:19:44.800341", "value": 469909504, "tags": {"agent": "html_agent", "phase": "start"}}
+{"timestamp": "2025-07-06T15:19:44.822770", "value": 393216, "tags": {"agent": "html_agent", "phase": "end"}}

@@ -2,9 +2,8 @@
 
 from flock.core import FlockFactory
 from settings import APP_SETTINGS
-# Import to ensure Azure OpenAI is configured
-import azure_config
 
+# Agent configuration constants
 AGENT_NAME = "research_agent"
 AGENT_DESCRIPTION = """Research Agent
 
@@ -15,11 +14,11 @@ including key points, findings, and relevant information about the subject.
 The agent uses Azure OpenAI gpt-4o-mini model for efficient research generation.
 """
 
-AGENT_INPUT = """topic: str | The topic to research and analyze"""
-
+AGENT_INPUT = "topic: str | The topic to research and analyze"
 AGENT_OUTPUT = """research_content: str | Detailed research findings and analysis on the topic,
 key_points: list[str] | Main points and findings from the research"""
 
+# Create the research agent
 research_agent = FlockFactory.create_default_agent(
     name=AGENT_NAME,
     description=AGENT_DESCRIPTION,
@@ -28,9 +27,9 @@ research_agent = FlockFactory.create_default_agent(
     include_thought_process=True,
     stream=True,
     enable_rich_tables=True,
-    model=APP_SETTINGS.research_model,  # Use model from environment configuration
-    max_tokens=APP_SETTINGS.max_tokens,  # Use max_tokens from environment configuration
-    temperature=APP_SETTINGS.research_temperature,  # Use research-specific temperature for creativity
+    model=APP_SETTINGS.research_model,
+    max_tokens=APP_SETTINGS.max_tokens,
+    temperature=APP_SETTINGS.research_temperature,
     print_context=True,
     tools=[],  # No tools needed for basic research
 )
