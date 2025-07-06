@@ -5,6 +5,7 @@ import os
 from agents.research_agent import research_agent
 from agents.summary_agent import summary_agent
 from agents.html_agent import html_agent, save_html_article
+from agents.image_agent import image_agent
 from routers.limit_router import LimitRouter, LimitRouterConfig
 from settings import APP_SETTINGS
 from flock.core import Flock
@@ -48,15 +49,16 @@ async def run_full_workflow(topic: str) -> dict:
         summary_agent.handoff_router = limit_router
         html_agent.handoff_router = limit_router
 
-        # Create the Flock with all three agents
+        # Create the Flock with all four agents
         flock = Flock(
             name="full_workflow_flock",
-            description="A flock for researching topics, creating summaries, and generating HTML articles",
+            description="A flock for researching topics, creating summaries, generating images, and creating HTML articles",
             model=APP_SETTINGS.research_model,  # Default model
             show_flock_banner=True,
             agents=[
                 research_agent,
                 summary_agent,
+                image_agent,
                 html_agent,
             ],
             # Re-enabled MCP servers after TaskGroup error was resolved
@@ -80,6 +82,7 @@ async def run_full_workflow(topic: str) -> dict:
         # Set up handoff routers for all agents
         research_agent.handoff_router = limit_router
         summary_agent.handoff_router = limit_router
+        image_agent.handoff_router = limit_router
         html_agent.handoff_router = limit_router
         print("✅ Agent routers configured")
 
@@ -123,10 +126,11 @@ async def main():
     """Main function to run the AI agent demo."""
     print("🤖 AI Agent Demo using Flock Framework")
     print("=" * 60)
-    print("This demo uses three agents:")
+    print("This demo uses four agents:")
     print("1. Research Agent (azure/gpt-4o-mini) - Conducts research")
     print("2. Summary Agent (azure/gpt-4.1-mini) - Creates titles and summaries")
-    print("3. HTML Agent (azure/gpt-4o-mini) - Generates newspaper-style HTML articles")
+    print("3. Image Agent (azure/dall-e-3) - Generates relevant images")
+    print("4. HTML Agent (azure/gpt-4o-mini) - Generates newspaper-style HTML articles")
     print("=" * 60)
     
     # Check if environment variables are set

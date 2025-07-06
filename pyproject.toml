@@ -9,6 +9,8 @@ dependencies = [
     "pydantic",
     "pydantic-settings",
     "python-dotenv",
+    "openai",
+    "requests",
 ]
 
 [build-system]

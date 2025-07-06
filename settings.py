@@ -46,6 +46,12 @@ class AppSettings(BaseSettings):
         description="Model for HTML generation agent."
     )
     
+    image_model: str = Field(
+        default="azure/dall-e-3",
+        validation_alias="IMAGE_MODEL",
+        description="Model for image generation agent."
+    )
+    
     default_temperature: float = Field(
         default=0.7,
         validation_alias="DEFAULT_TEMPERATURE",
@@ -68,6 +74,12 @@ class AppSettings(BaseSettings):
         default=0.3,
         validation_alias="HTML_TEMPERATURE",
         description="Temperature setting for HTML generation (lower for consistency)."
+    )
+    
+    image_temperature: float = Field(
+        default=0.8,
+        validation_alias="IMAGE_TEMPERATURE",
+        description="Temperature setting for image generation (higher for creativity)."
     )
     
     max_tokens: int = Field(

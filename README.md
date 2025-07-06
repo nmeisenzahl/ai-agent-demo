@@ -1,12 +1,13 @@
 # AI Agent Demo
 
-This project demonstrates AI agents using the [Flock framework](https://whiteducksoftware.github.io/flock/) with Azure OpenAI models. The demo creates a complete workflow that researches topics, generates summaries, and produces beautiful newspaper-style HTML articles.
+This project demonstrates AI agents using the [Flock framework](https://whiteducksoftware.github.io/flock/) with Azure OpenAI models. The demo creates a complete workflow that researches topics, generates summaries, and produces beautiful newspaper-style HTML articles. It further showcases the capabilities of using GitHub Copilot for code generation and editing.
 
 ## 🎯 Features
 
 - **🔍 Research Agent**: Conducts comprehensive research on any topic using Azure OpenAI
 - **📝 Summary Agent**: Creates compelling titles and concise summaries 
-- **🎨 HTML Agent**: Generates beautiful newspaper-style HTML articles with dynamic CSS
+- **🎨 Image Agent**: Generates relevant images using Azure OpenAI DALL-E 3
+- **🌐 HTML Agent**: Generates beautiful newspaper-style HTML articles with dynamic CSS and embedded images
 - **🔄 Smart Routing**: AgentRouter automatically chains agents together based on output requirements
 - **🛡️ Safety Controls**: LimitRouter prevents infinite loops with configurable iteration limits
 - **✅ HTML Validation**: Optional Playwright integration via MCP (Model Context Protocol) for HTML testing and validation
@@ -43,8 +44,9 @@ uv run python main.py
 1. **Input**: You provide a topic (e.g., "Artificial Intelligence in Healthcare")
 2. **Research**: Research Agent investigates the topic and provides detailed findings
 3. **Summarize**: Summary Agent creates a compelling title and concise summary
-4. **Generate**: HTML Agent produces a beautiful newspaper-style article
-5. **Output**: Complete HTML file saved with optional Playwright validation
+4. **Visualize**: Image Agent generates a relevant illustration using DALL-E 3
+5. **Generate**: HTML Agent produces a beautiful newspaper-style article with embedded image
+6. **Output**: Complete HTML file with image saved, with optional Playwright validation
 
 ## 📁 Project Structure
 
@@ -58,11 +60,12 @@ ai-agent-demo/
 │   ├── 📋 __init__.py         # Package initialization
 │   ├── 🔍 research_agent.py   # Research agent (gpt-4o-mini)
 │   ├── 📝 summary_agent.py    # Summary agent (gpt-4.1-mini)
-│   └── 🎨 html_agent.py       # HTML generation agent (gpt-4.1-mini)
+│   ├── 🎨 image_agent.py      # Image generation agent (dall-e-3)
+│   └── � html_agent.py       # HTML generation agent (gpt-4.1-mini)
 ├── routers/                   # Router components directory
 │   ├── 📋 __init__.py         # Package initialization
 │   └── 🛡️ limit_router.py     # LimitRouter for safety controls
-├── output/                    # Generated HTML files
+├── output/                    # Generated HTML files and images
 └── utils/                     # Utility functions
 
 ```
@@ -85,14 +88,31 @@ ai-agent-demo/
 - **Output**: `title`, `short_summary`
 - **Temperature**: 0.5 (focused summarization)
 
-### 🎨 HTML Agent
+### 🎨 Image Agent
+
+- **Model**: `azure/dall-e-3`
+- **Purpose**: Generates relevant images from article content using DALL-E 3
+- **Input**: `title`, `short_summary`
+- **Output**: `image_path`, `image_prompt`, `image_metadata`
+- **Temperature**: 0.8 (high creativity for visual content)
+- **Features**:
+  - Enhanced prompt generation for better image quality
+  - Automatic image download and local storage
+  - Image validation and metadata collection
+  - Safe filename generation with timestamps
+
+### 🌐 HTML Agent
 
 - **Model**: `azure/gpt-4.1-mini`
-- **Purpose**: Generates newspaper-style HTML articles with embedded CSS
-- **Input**: `title`, `short_summary`, `research_content`, `key_points`
+- **Purpose**: Generates newspaper-style HTML articles with embedded CSS and images
+- **Input**: `title`, `short_summary`, `research_content`, `key_points`, `image_path`, `image_metadata`
 - **Output**: `html_content` (complete HTML document)
 - **Temperature**: 0.3 (consistent code generation)
-- **Features**: Dynamic CSS generation, responsive design, accessibility features
+- **Features**:
+  - Dynamic CSS generation with image styling
+  - Responsive design with hover effects
+  - Image captions and credits
+  - Accessibility features
 
 ## 🔄 Router Architecture
 
@@ -130,12 +150,14 @@ AZURE_API_VERSION=2025-01-01
 RESEARCH_MODEL=azure/gpt-4o-mini
 SUMMARY_MODEL=azure/gpt-4.1-mini
 HTML_MODEL=azure/gpt-4.1-mini
+IMAGE_MODEL=azure/dall-e-3
 
 # Model Parameters
 DEFAULT_TEMPERATURE=0.7
 RESEARCH_TEMPERATURE=0.7
 SUMMARY_TEMPERATURE=0.5
 HTML_TEMPERATURE=0.3
+IMAGE_TEMPERATURE=0.8
 MAX_TOKENS=4000
 
 # Router Configuration
@@ -143,4 +165,12 @@ MAX_ITERATIONS=10
 
 # Output Configuration
 OUTPUT_DIR=output
+```
+
+## Implementation of another MCP server using GH Copilot
+
+Use the following prompt with GitHub Copilot to implement another MCP server to further provide research capabilities via Wikipedia:
+
+```txt
+Implement the Wikipedia MCP server (https://github.com/Rudra-ravi/wikipedia-mcp) and integrate it as a tool for the research agent to enhance research capabilities with real-time Wikipedia data.
 ```
